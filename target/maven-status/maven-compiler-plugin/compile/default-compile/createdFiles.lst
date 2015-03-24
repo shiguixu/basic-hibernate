@@ -1,0 +1,4 @@
+org\casper\eLearning\dao\IBaseDao.class
+org\casper\eLearning\model\SystemContext.class
+org\casper\eLearning\dao\BaseDao.class
+org\casper\eLearning\model\Pager.class
