@@ -12,6 +12,7 @@ import org.dbunit.DatabaseUnitException;
 import org.dbunit.dataset.DataSetException;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.operation.DatabaseOperation;
+import org.hibernate.ObjectNotFoundException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.After;
@@ -55,7 +56,6 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 		User u = userDao.select(1);
 		EntitiesHelper.assertUser(u);
 	}
-/*	
 	@Test(expected=ObjectNotFoundException.class)
 	public void testDelete() throws DatabaseUnitException, SQLException, IOException {
 		IDataSet ds = createDateSet("tb_user");
@@ -64,7 +64,6 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 		User tu = userDao.select(1);
 		System.out.println(tu.getUsername());
 	}
-*/	
 	@After
 	public void tearDown() throws DatabaseUnitException, SQLException, IOException {
 		//

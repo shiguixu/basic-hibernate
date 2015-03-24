@@ -1,7 +1,0 @@
-org\casper\eLearning\util\AbstractDbUnitTestCase.class
-org\casper\eLearning\util\EntitiesHelper.class
-org\casper\eLearning\dao\IUserDao.class
-org\casper\eLearning\dao\UserDao.class
-org\casper\eLearning\dao\TestUserDao.class
-org\casper\eLearning\model\User.class
-org\casper\eLearning\util\DbUtil.class
