@@ -56,14 +56,16 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 		User u = userDao.select(1);
 		EntitiesHelper.assertUser(u);
 	}
-	@Test(expected=ObjectNotFoundException.class)
+	
+	/*@Test(expected=ObjectNotFoundException.class)
 	public void testDelete() throws DatabaseUnitException, SQLException, IOException {
 		IDataSet ds = createDateSet("tb_user");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon,ds);
 		userDao.delete(1);
 		User tu = userDao.select(1);
 		System.out.println(tu.getUsername());
-	}
+	}*/
+	
 	@After
 	public void tearDown() throws DatabaseUnitException, SQLException, IOException {
 		//
