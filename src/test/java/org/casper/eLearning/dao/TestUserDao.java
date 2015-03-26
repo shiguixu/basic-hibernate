@@ -2,6 +2,9 @@ package org.casper.eLearning.dao;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -12,9 +15,11 @@ import org.dbunit.DatabaseUnitException;
 import org.dbunit.dataset.DataSetException;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.operation.DatabaseOperation;
+import org.hibernate.ObjectNotFoundException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -62,6 +67,18 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon,ds);
 		userDao.delete(1);
 		User tu = userDao.select(1);
+	}
+	
+	@Test
+	public void testListUserByHql() throws DatabaseUnitException, SQLException, IOException{
+		IDataSet ds=createDateSet("tb_user");
+		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
+		String hql="from User u where u.id=? and u.username=:username";
+		Object[] args=new Object[]{1};
+		Map<String,Object> alias=new HashMap();
+		alias.put("username", "admin1");
+		List<User> lists=userDao.listUserByHql(hql, args, alias);
+		Assert.assertEquals(lists.get(0).getUsername(), "admin1");
 	}
 	
 	@After

@@ -241,6 +241,7 @@ public class BaseDao<T> implements IBaseDao<T> {
 		setParameter(cquery, args);
 		Pager<T> pages=new Pager<T>();
 		setPagers(query, pages);
+		@SuppressWarnings("unchecked")
 		List<T> datas=query.list();
 		pages.setDatas(datas);
 		Long total=(Long)cquery.uniqueResult();
