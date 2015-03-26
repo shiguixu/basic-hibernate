@@ -85,7 +85,6 @@ public class BaseDao<T> implements IBaseDao<T> {
 
 	/**
 	 * 初始化排序的字段和排序的方式
-	 * 
 	 * @param hql 输入的hql语句
 	 * @return 返回增加了排序规则的hql语句
 	 */
@@ -105,7 +104,7 @@ public class BaseDao<T> implements IBaseDao<T> {
 
 	/**
 	 * 设置别名参数
-	 * 
+	 * from User u u.username= :username
 	 * @param query ：Hibernate的查询对象
 	 * @param alias	：使用到的别名参数
 	 */
