@@ -228,11 +228,15 @@ public class BaseDao<T> implements IBaseDao<T> {
 	 */
 	public Pager<T> find(String hql,Object[] args,Map<String,Object> alias){
 		hql=initSort(hql);
+		//获取查选总记录数的hql语句
 		String cq=getCountHql(hql, true);
+		//创建查选总记录数的query对象
 		Query cquery =getSession().createQuery(cq);
 		Query query=getSession().createQuery(hql);
+		//设置别名参数
 		setAliasParameter(query, alias);
 		setAliasParameter(cquery, alias);
+		//设置参数
 		setParameter(query, args);
 		setParameter(cquery, args);
 		Pager<T> pages=new Pager<T>();
@@ -243,6 +247,64 @@ public class BaseDao<T> implements IBaseDao<T> {
 		pages.setTotal(total);
 		return pages;
 	}
+	
+	public Pager<T> findByAlias(String hql,Map<String,Object> alias){
+		return this.find(hql, null, alias);
+	}
+	public Pager<T> findByParameter(String hql,Object[] args){
+		return this.find(hql, args, null);
+	}
+	public Pager<T> find(String hql,Object arg){
+		return this.findByParameter(hql, new Object[]{arg});
+	}
+	public Pager<T> find(String hql){
+		return this.findByAlias(hql, null);
+	}
+	
+	
+	/**
+	 * 查询一个对象
+	 */
+	public Object queryObject(String hql,Object[] args,Map<String,Object> alias){
+		Query query=getSession().createQuery(hql);
+		setAliasParameter(query, alias);
+		setParameter(query, args);
+		return query.uniqueResult();
+	}
+	
+	public Object queryObjectByAlias(String hql,Map<String,Object> alias){
+		return this.queryObject(hql, null, alias);
+	}
+	public Object queryObjectByParameter(String hql,Object[] args){
+		return this.queryObject(hql, args, null);
+	}
+	public Object queryObject(String hql,Object arg){
+		return this.queryObject(hql, new Object[]{arg});
+	}
+	public Object queryObject(String hql){
+		return this.queryObject(hql,null);
+	}
+	
+	/**
+	 * 更新语句：在真实的项目开发中不会涉及到真正的删除数据，都是通过在表中一些特殊字段，标识数据删除，
+	 * 所以只需更新的方法就行
+	 */
+	public void updateByHql(String hql,Object[] args){
+		Query query =getSession().createQuery(hql);
+		setParameter(query, args);
+		query.executeUpdate();
+	}
+	public void updateByHql(String hql,Object obj){
+		this.updateByHql(hql, new Object[] {obj});
+	}
+	public void updateByHql(String hql){
+		this.updateByHql(hql, null);
+	}
+	
+	
+	
+	
+	
 	
 	
 
