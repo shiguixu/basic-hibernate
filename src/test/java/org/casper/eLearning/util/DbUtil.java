@@ -16,7 +16,7 @@ public class DbUtil {
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 		Connection con = null;
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		con = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:orcl", 
+		con = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:ORA1", 
 				"scott", "tiger");
 		return con;
 	}

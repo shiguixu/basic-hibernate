@@ -8,6 +8,8 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
+import org.casper.eLearning.model.Pager;
+import org.casper.eLearning.model.SystemContext;
 import org.casper.eLearning.model.User;
 import org.casper.eLearning.util.AbstractDbUnitTestCase;
 import org.casper.eLearning.util.EntitiesHelper;
@@ -61,13 +63,13 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 		EntitiesHelper.assertUser(u);
 	}
 	
-	//@Test(expected=ObjectNotFoundException.class)
+/*	@Test(expected=ObjectNotFoundException.class)
 	public void testDelete() throws DatabaseUnitException, SQLException, IOException {
 		IDataSet ds = createDateSet("tb_user");
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon,ds);
 		userDao.delete(1);
 		User tu = userDao.select(1);
-	}
+	}*/
 	
 	@Test
 	public void testListUserByHql() throws DatabaseUnitException, SQLException, IOException{
@@ -75,15 +77,27 @@ public class TestUserDao extends AbstractDbUnitTestCase{
 		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
 		String hql="from User u where u.id=? and u.username=:username";
 		Object[] args=new Object[]{1};
-		Map<String,Object> alias=new HashMap();
+		Map<String,Object> alias=new HashMap<String,Object>();
 		alias.put("username", "admin1");
 		List<User> lists=userDao.listUserByHql(hql, args, alias);
 		Assert.assertEquals(lists.get(0).getUsername(), "admin1");
 	}
 	
+	@Test
+	public void testFind() throws IOException, DatabaseUnitException, SQLException{
+		IDataSet ds=createDateSet("tb_user");
+		DatabaseOperation.CLEAN_INSERT.execute(dbunitCon, ds);
+		Object[] args= new Object[]{1};
+		Map<String,Object> alias=new HashMap<String, Object>();
+		alias.put("username", "admin%");
+		SystemContext.setPageOffset(0);
+		SystemContext.setPageSize(5);
+		String hql ="from User u where u.id>? and u.username like :username";
+		Pager<User> lists=userDao.find(hql, args, alias);
+		Assert.assertEquals(5, lists.getDatas().size());
+		}
 	@After
 	public void tearDown() throws DatabaseUnitException, SQLException, IOException {
-		//
 		SessionHolder holder = (SessionHolder) TransactionSynchronizationManager.getResource(sessionFactory);
 		Session s = holder.getSession(); 
 		s.flush();

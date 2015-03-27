@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="5.045" errors="0" skipped="0" tests="2" name="org.casper.eLearning.dao.TestUserDao">
+<testsuite failures="0" time="1.546" errors="0" skipped="0" tests="3" name="org.casper.eLearning.dao.TestUserDao">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin"/>
@@ -25,9 +25,9 @@
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows Vista"/>
-    <property name="classworlds.conf" value="E:\Workspaces\MyEclipse 10\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf2945845081856973587.tmp"/>
+    <property name="classworlds.conf" value="D:\Workspaces\MyEclipse 10\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf4909503124532626155.tmp"/>
     <property name="sun.jnu.encoding" value="GBK"/>
-    <property name="java.library.path" value="D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin/client;D:/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin;D:/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/lib/i386;C:\oracle\product\10.2.0\db_1\bin;C:\Windows\System32;C:\Windows;C:\Windows\system32\wbem;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter\Driver;D:\java\bin;D:\java\jre\bin;D:\apache-tomcat-7.0.56\bin;E:\apache-maven-3.0.5-bin\apache-maven-3.0.5\bin;C:\Program Files\Microsoft SQL Server\80\Tools\Binn\;C:\Program Files\Microsoft SQL Server\90\DTS\Binn\;C:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\Microsoft SQL Server\90\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 8\Common7\IDE\PrivateAssemblies\;D:\apache-maven-3.2.5-bin\apache-maven-3.2.5\bin;"/>
+    <property name="java.library.path" value="D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\bin;.;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;D:/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin/client;D:/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin;D:/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/lib/i386;D:\oracle\product\10.2.0\db_1\bin;C:\Program Files\Java\jdk1.8.0_20\bin;D:\Backup\Documents\apache-maven-3.2.5-bin\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\80\Tools\Binn\;C:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\Microsoft SQL Server\90\DTS\Binn\;C:\Program Files\Microsoft SQL Server\90\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 8\Common7\IDE\PrivateAssemblies\"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="50.0"/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
@@ -38,7 +38,7 @@
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="1.6"/>
     <property name="user.name" value="Administrator"/>
-    <property name="java.class.path" value="D:\apache-maven-3.2.5-bin\apache-maven-3.2.5\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.class.path" value="D:\Backup\Documents\apache-maven-3.2.5-bin\boot\plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="32"/>
     <property name="java.home" value="D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre"/>
@@ -47,10 +47,10 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.version" value="1.6.0_13"/>
-    <property name="java.ext.dirs" value="D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="java.ext.dirs" value="D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\ext;C:\windows\Sun\Java\lib\ext"/>
     <property name="sun.boot.class.path" value="D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\resources.jar;D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\rt.jar;D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\sunrsasign.jar;D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\jsse.jar;D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\jce.jar;D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\lib\charsets.jar;D:\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\classes"/>
     <property name="java.vendor" value="Sun Microsystems Inc."/>
-    <property name="maven.home" value="D:\apache-maven-3.2.5-bin\apache-maven-3.2.5"/>
+    <property name="maven.home" value="D:\Backup\Documents\apache-maven-3.2.5-bin"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -58,6 +58,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="4.591" classname="org.casper.eLearning.dao.TestUserDao" name="testSelect"/>
-  <testcase time="0.454" classname="org.casper.eLearning.dao.TestUserDao" name="testListUserByHql"/>
+  <testcase time="1.399" classname="org.casper.eLearning.dao.TestUserDao" name="testSelect"/>
+  <testcase time="0.112" classname="org.casper.eLearning.dao.TestUserDao" name="testListUserByHql"/>
+  <testcase time="0.035" classname="org.casper.eLearning.dao.TestUserDao" name="testFind"/>
 </testsuite>
